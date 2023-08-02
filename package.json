@@ -1,0 +1,7 @@
+{
+  "name": "run-away-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vladimir <v.troshev@itsportal.ru>",
+  "license": "MIT"
+}
