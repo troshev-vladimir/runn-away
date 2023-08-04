@@ -1,33 +1,83 @@
-@keyframes person-animation {
-    from {
-        transform: translate(-100%, 0);
-    }
+@keyframes progress {
+    from { transform: translate(-100%, 0) }
 
-    to {
-        transform: translate(100%, 0);
-    }
+    to { transform: translate(100%, 0) }
 }
 
 
 .fade-in {
     animation: fade-in linear;
     animation-timeline: view(block);
-    animation-range: entry;
+    animation-range: entry-crossing;
+}
+
+@keyframes fade-in {
+    from {opacity: 0; }
+    to { opacity: 1; }
 }
 
 .fade-out {
-    animation: fade-in linear alternate;
+    animation: fade-out linear ;
+    animation-timeline: view(block);
+    animation-range: exit-crossing;
+}
+
+@keyframes fade-out {
+    from {opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slide-out {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to { 
+        opacity: 0;
+        transform: translate(-50%, -200%);
+    }
+}
+
+@keyframes preson-slide-out {
+    from {
+        top: 90vh;
+    }
+    to { 
+        top: 30vh;
+    }
+}
+
+@keyframes preson-slide-in {
+    from {
+        top: 30vh;
+    }
+    to { 
+        top: 60vh;
+    }
+}
+
+@keyframes hand-grab {
+    from {
+        transform: translateY(0) translateX(-50%);
+    }
+    to { 
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+
+
+.fade-in-fade-out {
+    animation: fade-in-fade-out linear;
     animation-timeline: view(block);
     animation-range: entry;
 }
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
+@keyframes fade-in-fade-out {
+    entry 0% {opacity: 0}
+    entry 100% {opacity: 1}
+    exit 0% {opacity: 1}
+    exit 100% {opacity: 0}
 }
 
 .from-right {
