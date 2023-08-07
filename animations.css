@@ -120,3 +120,41 @@
     }
 }
 
+.show-from-top {
+    animation: show-from-top linear;
+    animation-timeline: view(block);
+    animation-range: exit 100;
+}
+
+@keyframes show-from-top {
+    from {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-5%);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.parachute-down {
+    animation: parachute-down linear;
+    animation-timeline: view(block);
+    animation-range: cover;
+}
+
+@keyframes parachute-down {
+    from {
+        top: 50px;
+    }
+
+    to {
+        top: 950px;
+    }
+}
+
+
+

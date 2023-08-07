@@ -137,7 +137,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	observerLast3.observe(tenSection);
 
 	const buttonLink = document.querySelector("#button-link");
+	const vk = document.querySelector("#vk");
+	const telegram = document.querySelector("#telegram ");
 	buttonLink.addEventListener("click", () => {
+		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
+	});
+
+	vk.addEventListener("click", () => {
+		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
+	});
+
+	telegram.addEventListener("click", () => {
 		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
 	});
 });
