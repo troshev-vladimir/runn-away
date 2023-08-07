@@ -58,10 +58,19 @@
 
 @keyframes hand-grab {
     from {
-        transform: translateY(0) translateX(-50%);
+        top: 100vh;
     }
     to { 
-        transform: translateY(-50%) translateX(-50%);
+        top: 40vh;
+    }
+}
+
+@keyframes hand-ungrab {
+    from {
+        top: 40vh;
+    }
+    to { 
+        top: 100vh;
     }
 }
 

@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const personWithPc = document.querySelector(".person-with-pc");
 	const personInBoat = document.querySelector(".person-in-boat");
 	const personInPlane = document.querySelector(".person-in-plane");
+
 	const firstSection = document.querySelector(".first");
 	const secondSection = document.querySelector(".second");
 	const thirdSection = document.querySelector(".third");
@@ -15,26 +16,44 @@ document.addEventListener("DOMContentLoaded", () => {
 	const seventhSection = document.querySelector(".seventh");
 	const eighthSection = document.querySelector(".eighth");
 	const nineSection = document.querySelector(".nine");
+	const tenSection = document.querySelector(".ten");
+
+	function hideAll() {
+		person.classList.add("hidden");
+		personWithPc.classList.add("hidden");
+		personInBoat.classList.add("hidden");
+		personInPlane.classList.add("hidden");
+		personWithPc.classList.add("hidden");
+
+		firstSection.classList.remove("visible");
+		secondSection.classList.remove("visible");
+		thirdSection.classList.remove("visible");
+		forthSection.classList.remove("visible");
+		fifthSection.classList.remove("visible");
+		sixthSection.classList.remove("visible");
+		seventhSection.classList.remove("visible");
+		eighthSection.classList.remove("visible");
+		nineSection.classList.remove("visible");
+		tenSection.classList.remove("visible");
+	}
 
 	function makeObserver(section, personItem, options) {
 		const observer = new IntersectionObserver((entry, observer) => {
 			if (entry[0].isIntersecting) {
-				person.classList.add("hidden");
+				hideAll();
 				personItem.classList.remove("hidden");
-			} else {
-				person.classList.remove("hidden");
-				personItem.classList.add("hidden");
+				section.classList.add("visible");
 			}
 		}, options);
 
 		observer.observe(section);
 	}
 
-	// makeObserver(firstSection, person, {
-	// 	root: null,
-	// 	threshold: 0,
-	// 	rootMargin: "0px",
-	// });
+	makeObserver(firstSection, person, {
+		root: null,
+		threshold: 0,
+		rootMargin: "0px",
+	});
 
 	makeObserver(secondSection, personWithPc, {
 		root: null,
@@ -60,32 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		rootMargin: "-100px 0px -450px 0px",
 	});
 
-	// makeObserver(sixthSection, person, {
-	// 	root: null,
-	// 	threshold: 0,
-	// 	rootMargin: "-100px 0px -450px 0px",
-	// });
+	makeObserver(sixthSection, person, {
+		root: null,
+		threshold: 0,
+		rootMargin: "-100px 0px -450px 0px",
+	});
 
-	// makeObserver(seventhSection, person, {
-	// 	root: null,
-	// 	threshold: 0,
-	// 	rootMargin: "-100px 0px -450px 0px",
-	// });
-
-	// makeObserver(eighthSection, person, {
-	// 	root: null,
-	// 	threshold: 0,
-	// 	rootMargin: "-100px 0px -450px 0px",
-	// });
+	makeObserver(seventhSection, person, {
+		root: null,
+		threshold: 0,
+		rootMargin: "-100px 0px -450px 0px",
+	});
 
 	const observerLast1 = new IntersectionObserver(
 		(entry, observer) => {
 			if (entry[0].isIntersecting) {
-				person.classList.add("hidden");
+				hideAll();
 				eighthSection.classList.add("visible");
-				nineSection.classList.remove("visible");
-			} else {
-				eighthSection.classList.remove("visible");
 			}
 		},
 		{
@@ -94,18 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			rootMargin: "0px",
 		}
 	);
-
 	observerLast1.observe(eighthSection);
 
 	const observerLast2 = new IntersectionObserver(
 		(entry, observer) => {
 			if (entry[0].isIntersecting) {
-				person.classList.add("hidden");
+				hideAll();
 				nineSection.classList.add("visible");
-				eighthSection.classList.remove("visible");
-			} else {
-				nineSection.classList.remove("visible");
-				eighthSection.classList.add("visible");
 			}
 		},
 		{
@@ -114,6 +119,25 @@ document.addEventListener("DOMContentLoaded", () => {
 			rootMargin: "0px",
 		}
 	);
-
 	observerLast2.observe(nineSection);
+
+	const observerLast3 = new IntersectionObserver(
+		(entry, observer) => {
+			if (entry[0].isIntersecting) {
+				hideAll();
+				tenSection.classList.add("visible");
+			}
+		},
+		{
+			root: null,
+			threshold: 0,
+			rootMargin: "0px",
+		}
+	);
+	observerLast3.observe(tenSection);
+
+	const buttonLink = document.querySelector("#button-link");
+	buttonLink.addEventListener("click", () => {
+		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
+	});
 });
