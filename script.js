@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const tenSection = document.querySelector(".ten");
 	const elevenSection = document.querySelector(".eleven");
 
+	const eightPerson = eighthSection.querySelector(".person");
+
 	function hideAll() {
 		person.classList.add("hidden");
 		personWithPc.classList.add("hidden");
@@ -188,5 +190,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		elevenViewAreaEl.style.height = size;
 
 		elevenViewAreaEl.style.width = size;
+
+		const step1 = person.querySelector(".person-step1");
+		const step2 = person.querySelector(".person-step2");
+
+		const eightPersonStep1 = eightPerson.querySelector(".person-step1");
+		const eightPersonStep2 = eightPerson.querySelector(".person-step2");
+
+		if (window.scrollY % 2) {
+			step1.classList.add("hidden");
+			eightPersonStep1.classList.add("hidden");
+
+			step2.classList.remove("hidden");
+			eightPersonStep2.classList.remove("hidden");
+		} else {
+			step2.classList.add("hidden");
+			eightPersonStep2.classList.add("hidden");
+
+			step1.classList.remove("hidden");
+			eightPersonStep1.classList.remove("hidden");
+		}
 	});
 });
