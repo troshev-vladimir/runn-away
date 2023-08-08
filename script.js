@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const eighthSection = document.querySelector(".eighth");
 	const nineSection = document.querySelector(".nine");
 	const tenSection = document.querySelector(".ten");
+	const elevenSection = document.querySelector(".eleven");
 
 	function hideAll() {
 		person.classList.add("hidden");
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		eighthSection.classList.remove("visible");
 		nineSection.classList.remove("visible");
 		tenSection.classList.remove("visible");
+		elevenSection.classList.remove("visible");
 	}
 
 	function makeObserver(section, personItem, options) {
@@ -91,17 +93,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		rootMargin: "-100px 0px -450px 0px",
 	});
 
+	const rootMargin = "0px 0px 0px 0px";
+
 	const observerLast1 = new IntersectionObserver(
 		(entry, observer) => {
 			if (entry[0].isIntersecting) {
 				hideAll();
 				eighthSection.classList.add("visible");
+				console.log("eighthSection");
 			}
 		},
 		{
 			root: null,
 			threshold: 0,
-			rootMargin: "0px",
+			rootMargin,
 		}
 	);
 	observerLast1.observe(eighthSection);
@@ -111,12 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (entry[0].isIntersecting) {
 				hideAll();
 				nineSection.classList.add("visible");
+				console.log("nineSection");
 			}
 		},
 		{
 			root: null,
 			threshold: 0,
-			rootMargin: "0px",
+			rootMargin,
 		}
 	);
 	observerLast2.observe(nineSection);
@@ -126,15 +132,32 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (entry[0].isIntersecting) {
 				hideAll();
 				tenSection.classList.add("visible");
+				console.log("tenSection");
 			}
 		},
 		{
 			root: null,
 			threshold: 0,
-			rootMargin: "0px",
+			rootMargin,
 		}
 	);
 	observerLast3.observe(tenSection);
+
+	const observerLast4 = new IntersectionObserver(
+		(entry, observer) => {
+			if (entry[0].isIntersecting) {
+				hideAll();
+				elevenSection.classList.add("visible");
+				console.log("elevenSection");
+			}
+		},
+		{
+			root: null,
+			threshold: 0,
+			rootMargin,
+		}
+	);
+	observerLast4.observe(elevenSection);
 
 	const buttonLink = document.querySelector("#button-link");
 	const vk = document.querySelector("#vk");
@@ -149,5 +172,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	telegram.addEventListener("click", () => {
 		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
+	});
+
+	const elevenSectionPosition = elevenSection.offsetTop;
+	const elevenSectionHeight = elevenSection.offsetHeight;
+	const vh = Math.max(
+		document.documentElement.clientHeight || 0,
+		window.innerHeight || 0
+	);
+
+	const elevenViewAreaEl = elevenSection.querySelector(".view");
+
+	window.addEventListener("scroll", function () {
+		const size = 360 + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
+		elevenViewAreaEl.style.height = size;
+
+		elevenViewAreaEl.style.width = size;
 	});
 });
