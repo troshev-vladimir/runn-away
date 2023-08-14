@@ -21,9 +21,4 @@
     z-index: 100;
 }
 
-@media screen and (max-width: 600px) {
-    .decor-1 {
-        display: none;
-    }
-}
 

@@ -57,6 +57,16 @@
 
     .fifth {
         height: 1800px;
+        overflow: hidden;
+    }
+
+    .fifth .cloud-one {
+        width: 150%;
+        top: 0px;
+    }
+
+    .fifth .cloud-two {
+        width: 200%;
     }
     
 

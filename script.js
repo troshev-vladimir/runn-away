@@ -186,12 +186,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	const elevenViewAreaEl = elevenSection.querySelector(".view");
 
 	window.addEventListener("scroll", function () {
-		console.log(window.innerWidth);
 		const viewWidth = window.innerWidth > 600 ? 360 : 200;
 		const size =
 			viewWidth + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
-		elevenViewAreaEl.style.height = size;
 
+		elevenViewAreaEl.style.height = size;
 		elevenViewAreaEl.style.width = size;
 
 		const step1 = person.querySelector(".person-step1");

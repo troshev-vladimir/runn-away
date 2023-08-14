@@ -58,6 +58,13 @@
     .seventh .text3 {
         position: absolute;
         right: 20px;
+        left: initial;
         top: 1800px;
     }
+
+    .seventh .decor-1 {
+        left: 0;
+        right: 0;
+    }
+    
 }

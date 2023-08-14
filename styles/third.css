@@ -1,7 +1,6 @@
 .third {
     position: relative;
     height: 1600px;
-    
 }
 
 .third::after,
@@ -63,27 +62,31 @@
 }
 
 @media screen and (max-width: 600px) {
+    .third {
+        height: 1200px;
+    }
+    
     .cooler, .usbs, .chip {
         width: 80vw;
     }
 
     .chip {
         position: absolute;
-        top: 150px;
+        top: 0px;
         right: 0%;
         z-index: 10;
     }
     
     .usbs {
         position: absolute;
-        top: 550px;
+        top: 300px;
         z-index: 10;
         left: 0%;
     }
     
     .cooler {
         position: absolute;
-        top: 1050px;
+        top: 600px;
         z-index: 10;
         right: 0%;
     }
