@@ -1,0 +1,63 @@
+.eleven {
+    height: 250vh;
+    text-align: center;
+    animation: hand-ungrab 1s linear both;
+    animation-timeline: view(block);
+    animation-range: contain 0 contain 100;
+}
+
+.eleven .view {
+    visibility: hidden;
+    position: fixed;
+    display: block;
+    background-color: rgba(224, 224, 224, 0.14);
+    /* opacity: 0.14; */
+    border-radius: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    top: 60vh;
+    width: 360px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.eleven .document {
+    position: fixed;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    top: 60vh;
+}
+
+
+.eleven .person {
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: 100;
+}
+
+.eleven.visible .person,
+.eleven.visible .view {
+    visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+    .eleven .person {
+        width: 60px;
+        height: 145px;
+    }
+
+    .eleven .view {
+        width: 200px;
+        height: 200px;
+    }
+
+    .eleven .document {
+        top: 40vh;
+    }
+}

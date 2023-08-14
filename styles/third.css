@@ -1,0 +1,90 @@
+.third {
+    position: relative;
+    height: 1600px;
+    
+}
+
+.third::after,
+.third::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.third::after {
+    background-position: bottom;
+    background-image: url(/images/second/bottom-bg.svg);
+}
+
+.third::before {
+    background-position: 0 0;
+    background-image: url(/images/second/top-bg.svg);
+}
+
+.chip {
+    position: absolute;
+    top: 250px;
+    right: 0%;
+    z-index: 10;
+}
+
+.usbs {
+    position: absolute;
+    top: 788px;
+    z-index: 10;
+    left: 0%;
+}
+
+.cooler {
+    position: absolute;
+    top: 950px;
+    z-index: 10;
+    right: 0%;
+}
+
+.cooler #animation_rotate {
+    animation: rotate 2s linear infinite;
+    transform-origin: 341px 189px;
+}
+
+@keyframes rotate {   
+    from {     
+        transform: rotate(0deg);   
+    }   
+    to {
+        transform: rotate(360deg);   
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cooler, .usbs, .chip {
+        width: 80vw;
+    }
+
+    .chip {
+        position: absolute;
+        top: 150px;
+        right: 0%;
+        z-index: 10;
+    }
+    
+    .usbs {
+        position: absolute;
+        top: 550px;
+        z-index: 10;
+        left: 0%;
+    }
+    
+    .cooler {
+        position: absolute;
+        top: 1050px;
+        z-index: 10;
+        right: 0%;
+    }
+}

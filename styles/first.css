@@ -1,0 +1,60 @@
+.first {
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.first .person {
+    position: fixed;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: preson-slide-out linear both;
+    animation-timeline: view(block);
+    animation-range-start: exit-crossing 10;
+    animation-range-end: exit-crossing 0;
+    z-index: 100;
+}
+
+.title {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transition: all ease .4s;
+
+    animation: slide-out linear both;
+    animation-timeline: view(block);
+    animation-range-start: contain 80%;
+    animation-range-end: exit-crossing 0;
+}
+
+.title h1 {
+    font-family: Zing;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 100;
+    color: #F1F1F1;
+}
+
+.title h2 {
+    color: #F1F1F1;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 10px;
+    }
+  
+    .logo {
+      width: 80px;
+    }
+  
+    .person, .person-step1, .person-step2 {
+      width: 200px;
+      height: 200px;
+    }
+}

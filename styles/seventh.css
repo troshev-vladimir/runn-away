@@ -1,0 +1,63 @@
+.seventh {
+    position: relative;
+    height: 1200px;
+}
+
+.seventh .decor-1 {
+    position: absolute;
+    left: 100px;
+    top: 600px;
+}
+
+.seventh .decor-2 {
+    position: absolute;
+    right: 100px;
+    top: 1200px;
+}
+
+.seventh .text1 {
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+.seventh .text2 {
+    position: absolute;
+    top: 450px;
+    right: 100px;
+}
+
+.seventh .text3 {
+    position: absolute;
+    top: 1250px;
+    left: 100px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .seventh {
+        height: 1800px;
+    }
+    
+
+    .seventh .text1, .seventh .text2, .seventh .text3 {
+        width: 80vw;
+    }
+
+    .seventh .text1 {
+        position: absolute;
+        right: 0;
+        top: 100px;
+    }
+    
+    .seventh .text2 {
+        position: absolute;
+        top: 800px;
+    }
+    
+    .seventh .text3 {
+        position: absolute;
+        right: 20px;
+        top: 1800px;
+    }
+}

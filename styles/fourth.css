@@ -1,0 +1,57 @@
+.forth {
+    position: relative;
+    height: 1600px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.10) 100%), #363636;
+    background-image: url(/images/trhird/bg.svg);
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+}
+
+.forth .show-from-top {
+    position: absolute;
+    top: 0;
+    right: 350px;
+}
+
+.forth .text1 {
+    position: absolute;
+    right: 0;
+    top: 300px;
+}
+
+.forth .text2 {
+    position: absolute;
+    top: 600px;
+}
+
+.forth .text3 {
+    position: absolute;
+    right: 0;
+    top: 900px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .forth .text1, .forth .text2, .forth .text3 {
+        width: 80vw;
+    }
+
+    .forth .text1 {
+        position: absolute;
+        right: 0;
+        top: 300px;
+    }
+    
+    .forth .text2 {
+        position: absolute;
+        top: 600px;
+    }
+    
+    .forth .text3 {
+        position: absolute;
+        right: 0;
+        top: 900px;
+    }
+    
+}

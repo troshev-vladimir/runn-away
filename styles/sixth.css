@@ -1,0 +1,55 @@
+.sixth {
+    position: relative;
+    height: 2200px;
+
+    background-image: url(/images/sixth/bg.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sixth .text1 {
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+
+.sixth .text2 {
+    position: absolute;
+    top: 850px;
+    left: 0; 
+}
+
+.sixth .text3 {
+    position: absolute;
+    top: 1550px;
+    right: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+    .sixth {
+        height: 2000px;
+    }
+
+    .sixth .text1, .sixth .text2, .sixth .text3 {
+        width: 80vw;
+    }
+
+    .sixth .text1 {
+        position: absolute;
+        right: 0;
+        top: 160px;
+    }
+    
+    .sixth .text2 {
+        position: absolute;
+        top: 1000px;
+    }
+    
+    .sixth .text3 {
+        position: absolute;
+        right: 0;
+        top: 1400px;
+    }
+}

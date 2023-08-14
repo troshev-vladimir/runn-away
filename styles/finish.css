@@ -1,0 +1,25 @@
+
+.finish {
+    position: relative;
+    z-index: 10000;
+    background-color: #67CAEF;
+    height: 100vh;
+}
+
+.finish > svg {
+    width: 100%;
+}
+
+.finish > svg.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .finish > svg:not(.mobile) {
+        display: none;
+    }
+
+    .finish > svg.mobile {
+        display: block;
+    }
+}

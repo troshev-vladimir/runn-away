@@ -1,0 +1,40 @@
+.second {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+}
+
+.second.visible .pc {
+    display: none;
+}
+
+.pc {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.person-with-pc {
+    position: sticky;
+    left: 50%;
+    top: 30vh;
+    transform: translate(-50%, -50%);
+}
+
+.items {
+    position: sticky;
+    top: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .pc {
+        width: 150px;
+        height: 100px;
+        top: 100px;
+    }
+
+    .items {
+        width: 100vw;
+    }
+}

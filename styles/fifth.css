@@ -1,0 +1,83 @@
+.fifth {
+    position: relative;
+    height: 2200px;
+}
+
+.parachute {
+    position: absolute;
+    right: 30%;
+}
+
+.fifth .cloud-one {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: 500px;
+    background-image: url(/images/fifth/cloud-one.svg);
+    background-attachment: scroll;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.fifth .cloud-two {
+    position: absolute;
+    top: 800px;
+    width: 100%;
+    height: 800px;
+    background-image: url(/images/fifth/cloud-two.svg);
+    background-attachment: scroll;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.fifth .text1 {
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    top: 400px;
+}
+
+.fifth .text2 {
+    position: absolute;
+    top: 1150px;
+    right: 10%;
+    z-index: 2;
+}
+
+.fifth .text3 {
+    position: absolute;
+    top: 1550px;
+    left: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+    .fifth {
+        height: 1800px;
+    }
+    
+
+    .fifth .text1, .fifth .text2, .fifth .text3 {
+        width: 80vw;
+    }
+
+    .fifth .text1 {
+        position: absolute;
+        right: 0;
+        top: 300px;
+    }
+    
+    .fifth .text2 {
+        position: absolute;
+        top: 600px;
+    }
+    
+    .fifth .text3 {
+        position: absolute;
+        right: 0;
+        top: 1400px;
+    }
+}

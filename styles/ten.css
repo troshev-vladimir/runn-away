@@ -1,0 +1,62 @@
+.ten {
+    height: 250vh;
+    text-align: center;
+    animation: hand-ungrab 1s linear both;
+    animation-timeline: view(block);
+    animation-range: contain 0 contain 100;
+}
+
+.ten .view {
+    visibility: hidden;
+    position: fixed;
+    display: block;
+    background-color: #E0E0E0;
+    opacity: 0.14;
+    border-radius: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    top: 60vh;
+    width: 360px;
+    height: 360px;
+}
+
+.ten .person {
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 60vh;
+    z-index: 100;
+}
+
+.ten .hand {
+    visibility: hidden;
+    position: fixed;
+    top: inherit;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1000;
+}
+
+.ten.visible .person,
+.ten.visible .hand,
+.ten.visible .view {
+    visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+    .ten .person {
+        width: 60px;
+        height: 145px;
+    }
+
+    .ten .view {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ten .hand {
+        width: 120px;
+    }
+}
