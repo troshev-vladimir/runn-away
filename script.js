@@ -186,7 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const elevenViewAreaEl = elevenSection.querySelector(".view");
 
 	window.addEventListener("scroll", function () {
-		const size = 360 + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
+		console.log(window.innerWidth);
+		const viewWidth = window.innerWidth > 600 ? 360 : 200;
+		const size =
+			viewWidth + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
 		elevenViewAreaEl.style.height = size;
 
 		elevenViewAreaEl.style.width = size;
