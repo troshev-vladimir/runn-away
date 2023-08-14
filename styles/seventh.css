@@ -38,7 +38,6 @@
     .seventh {
         height: 1800px;
     }
-    
 
     .seventh .text1, .seventh .text2, .seventh .text3 {
         width: 80vw;
@@ -46,13 +45,27 @@
 
     .seventh .text1 {
         position: absolute;
-        right: 0;
-        top: 100px;
+        left: -5%;
+        top: 0px;
+        width: 100vw;
+    }
+
+    .seventh .decor-1 {
+        left: 0;
+        top: 400px;
+        width: 50vw;
     }
     
     .seventh .text2 {
         position: absolute;
-        top: 800px;
+        top: 600px;
+        right: 0;
+    }
+
+    .seventh .decor-2 {
+        left: 0;
+        top: 1200px;
+        width: 50vw;
     }
     
     .seventh .text3 {
@@ -62,9 +75,6 @@
         top: 1800px;
     }
 
-    .seventh .decor-1 {
-        left: 0;
-        right: 0;
-    }
+    
     
 }

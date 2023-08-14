@@ -21,5 +21,7 @@
 
     .finish > svg.mobile {
         display: block;
+        bottom: 0;
+        position: absolute;
     }
 }
