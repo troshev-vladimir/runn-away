@@ -46,11 +46,13 @@
     .forth .text2 {
         position: absolute;
         top: 600px;
+        width: 100vw;
     }
     
     .forth .text3 {
         position: absolute;
         right: 0;
+        width: 100vw;
         top: 900px;
     }
     

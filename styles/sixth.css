@@ -29,7 +29,7 @@
 @media screen and (max-width: 600px) {
 
     .sixth {
-        height: 2000px;
+        height: 1900px;
     }
 
     .sixth .text1, .sixth .text2, .sixth .text3 {
@@ -39,17 +39,19 @@
     .sixth .text1 {
         position: absolute;
         right: 0;
-        top: 160px;
+        top: 0px;
     }
     
     .sixth .text2 {
         position: absolute;
-        top: 1000px;
+        top: 900px;
+        width: 100vw;
     }
     
     .sixth .text3 {
         position: absolute;
         right: 0;
-        top: 1400px;
+        width: 100vw;
+        top: 1300px;
     }
 }
