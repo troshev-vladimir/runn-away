@@ -1,6 +1,13 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+	window.scrollTo({ top: 0, behavior: "smooth" });
+
+	const vh = Math.max(
+		document.documentElement.clientHeight || 0,
+		window.innerHeight || 0
+	);
+
 	const body = document.querySelector("body");
 	const person = document.querySelector(".person");
 	const personWithPc = document.querySelector(".person-with-pc");
@@ -19,7 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	const tenSection = document.querySelector(".ten");
 	const elevenSection = document.querySelector(".eleven");
 
-	const eightPerson = eighthSection.querySelector(".person");
+	const pc = document.querySelector(".pc");
+	const handWithCoin = nineSection.querySelector(".hand");
+	const handWithoutCoin = tenSection.querySelector(".hand");
+	const personStands = nineSection.querySelector(".person");
+	const personStandsWithCoin = tenSection.querySelector(".person");
+
+	// const eightPerson = eighthSection.querySelector(".person");
 
 	function hideAll() {
 		person.classList.add("hidden");
@@ -53,17 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		observer.observe(section);
 	}
 
-	makeObserver(firstSection, person, {
-		root: null,
-		threshold: 0,
-		rootMargin: "0px",
-	});
+	// makeObserver(firstSection, person, {
+	// 	root: null,
+	// 	threshold: 0,
+	// 	rootMargin: "0px",
+	// });
 
-	makeObserver(secondSection, personWithPc, {
-		root: null,
-		threshold: 0,
-		rootMargin: "0px 0px -650px 0px",
-	});
+	// makeObserver(secondSection, personWithPc, {
+	// 	root: null,
+	// 	threshold: 0,
+	// 	rootMargin: "0px 0px -650px 0px",
+	// });
 
 	makeObserver(thirdSection, person, {
 		root: null,
@@ -97,69 +110,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const rootMargin = "0px 0px 0px 0px";
 
-	const observerLast1 = new IntersectionObserver(
-		(entry, observer) => {
-			if (entry[0].isIntersecting) {
-				hideAll();
-				eighthSection.classList.add("visible");
-				console.log("eighthSection");
-			}
-		},
-		{
-			root: null,
-			threshold: 0,
-			rootMargin,
-		}
-	);
-	observerLast1.observe(eighthSection);
+	// const observerLast1 = new IntersectionObserver(
+	// 	(entry, observer) => {
+	// 		if (entry[0].isIntersecting) {
+	// 			hideAll();
+	// 			eighthSection.classList.add("visible");
+	// 			console.log("eighthSection");
+	// 		}
+	// 	},
+	// 	{
+	// 		root: null,
+	// 		threshold: 0,
+	// 		rootMargin,
+	// 	}
+	// );
+	// observerLast1.observe(eighthSection);
 
-	const observerLast2 = new IntersectionObserver(
-		(entry, observer) => {
-			if (entry[0].isIntersecting) {
-				hideAll();
-				nineSection.classList.add("visible");
-				console.log("nineSection");
-			}
-		},
-		{
-			root: null,
-			threshold: 0,
-			rootMargin,
-		}
-	);
-	observerLast2.observe(nineSection);
+	// const observerLast2 = new IntersectionObserver(
+	// 	(entry, observer) => {
+	// 		if (entry[0].isIntersecting) {
+	// 			hideAll();
+	// 			nineSection.classList.add("visible");
+	// 			console.log("nineSection");
+	// 		}
+	// 	},
+	// 	{
+	// 		root: null,
+	// 		threshold: 0,
+	// 		rootMargin,
+	// 	}
+	// );
+	// observerLast2.observe(nineSection);
 
-	const observerLast3 = new IntersectionObserver(
-		(entry, observer) => {
-			if (entry[0].isIntersecting) {
-				hideAll();
-				tenSection.classList.add("visible");
-				console.log("tenSection");
-			}
-		},
-		{
-			root: null,
-			threshold: 0,
-			rootMargin,
-		}
-	);
-	observerLast3.observe(tenSection);
+	// const observerLast3 = new IntersectionObserver(
+	// 	(entry, observer) => {
+	// 		if (entry[0].isIntersecting) {
+	// 			hideAll();
+	// 			tenSection.classList.add("visible");
+	// 			console.log("tenSection");
+	// 		}
+	// 	},
+	// 	{
+	// 		root: null,
+	// 		threshold: 0,
+	// 		rootMargin,
+	// 	}
+	// );
+	// observerLast3.observe(tenSection);
 
-	const observerLast4 = new IntersectionObserver(
-		(entry, observer) => {
-			if (entry[0].isIntersecting) {
-				hideAll();
-				elevenSection.classList.add("visible");
-				console.log("elevenSection");
-			}
-		},
-		{
-			root: null,
-			threshold: 0,
-			rootMargin,
-		}
-	);
-	observerLast4.observe(elevenSection);
+	// const observerLast4 = new IntersectionObserver(
+	// 	(entry, observer) => {
+	// 		if (entry[0].isIntersecting) {
+	// 			hideAll();
+	// 			elevenSection.classList.add("visible");
+	// 			console.log("elevenSection");
+	// 		}
+	// 	},
+	// 	{
+	// 		root: null,
+	// 		threshold: 0,
+	// 		rootMargin,
+	// 	}
+	// );
+	// observerLast4.observe(elevenSection);
 
 	const buttonLink = document.querySelector("#button-link");
 	const vk = document.querySelector("#vk");
@@ -176,41 +189,176 @@ document.addEventListener("DOMContentLoaded", () => {
 		window.location.href = "https://mmcflash.ru/news/nissan-euro0";
 	});
 
+	const firstSectionPosition = firstSection.offsetTop;
+	const secondSectionPosition = secondSection.offsetTop;
+	const thirdSectionPosition = thirdSection.offsetTop;
+	const eighthSectionPosition = eighthSection.offsetTop;
+	const nineSectionPosition = nineSection.offsetTop;
+	const tenSectionPosition = tenSection.offsetTop;
 	const elevenSectionPosition = elevenSection.offsetTop;
-	const elevenSectionHeight = elevenSection.offsetHeight;
-	const vh = Math.max(
-		document.documentElement.clientHeight || 0,
-		window.innerHeight || 0
-	);
+	const firstSectionHeight = firstSection.getBoundingClientRect().height;
+	const secondSectionHeight = secondSection.getBoundingClientRect().height;
+	const thirdSectionHeight = thirdSection.getBoundingClientRect().height;
+	const eighthSectionHeight = eighthSection.getBoundingClientRect().height;
+	const nineSectionHeight = nineSection.getBoundingClientRect().height;
+	const tenSectionHeight = tenSection.getBoundingClientRect().height;
+	const elevenSectionHeight = elevenSection.getBoundingClientRect().height;
 
 	const elevenViewAreaEl = elevenSection.querySelector(".view");
-
+	const viewWidth = window.innerWidth > 600 ? 360 : 200;
 	window.addEventListener("scroll", function () {
-		const viewWidth = window.innerWidth > 600 ? 360 : 200;
-		const size =
-			viewWidth + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
-
-		elevenViewAreaEl.style.height = size;
-		elevenViewAreaEl.style.width = size;
-
+		// ================ Шагание
 		const step1 = person.querySelector(".person-step1");
 		const step2 = person.querySelector(".person-step2");
 
-		const eightPersonStep1 = eightPerson.querySelector(".person-step1");
-		const eightPersonStep2 = eightPerson.querySelector(".person-step2");
-
 		if (window.scrollY % 2) {
 			step1.classList.add("hidden");
-			eightPersonStep1.classList.add("hidden");
-
 			step2.classList.remove("hidden");
-			eightPersonStep2.classList.remove("hidden");
 		} else {
 			step2.classList.add("hidden");
-			eightPersonStep2.classList.add("hidden");
-
 			step1.classList.remove("hidden");
-			eightPersonStep1.classList.remove("hidden");
 		}
+		// ================ Шагание
+
+		// ================ вверх на 1
+		const firstSectionScroll = window.scrollY;
+		const firstSectionPersentageOfScroll = persentageOfScroll(
+			firstSectionScroll,
+			firstSectionHeight
+		);
+		if (
+			0 <= firstSectionPersentageOfScroll
+			// &&
+			// firstSectionPersentageOfScroll < 1
+		) {
+			person.style.top = 70 - 40 * firstSectionPersentageOfScroll + "vh";
+		}
+		// ================ вверх на 1
+
+		// ================ за комп
+		const secondSectionScroll = window.scrollY - secondSectionPosition;
+		const secondSectionPersentageOfScroll = persentageOfScroll(
+			secondSectionScroll,
+			secondSectionHeight
+		);
+		if (
+			0 < secondSectionPersentageOfScroll &&
+			secondSectionPersentageOfScroll < 1
+		) {
+			personWithPc.classList.remove("hidden");
+			person.classList.add("hidden");
+			pc.classList.add("hidden");
+		} else if (0 >= secondSectionPersentageOfScroll) {
+			personWithPc.classList.add("hidden");
+			person.classList.remove("hidden");
+			pc.classList.remove("hidden");
+		} else if (1 < secondSectionPersentageOfScroll) {
+			personWithPc.classList.add("hidden");
+			person.classList.remove("hidden");
+			pc.classList.remove("hidden");
+		}
+		// ================ за комп
+
+		// ================ из-за компа
+		const thirdSectionScroll = window.scrollY - thirdSectionPosition;
+		const thirdSectionPersentageOfScroll = persentageOfScroll(
+			thirdSectionScroll,
+			thirdSectionHeight
+		);
+		if (
+			0 < thirdSectionPersentageOfScroll &&
+			thirdSectionPersentageOfScroll < 1
+		) {
+			personWithPc.classList.add("hidden");
+			person.classList.remove("hidden");
+			pc.classList.remove("hidden");
+		}
+		// ================ из-за компа
+
+		// ================ вниз на 8
+		const eighthSectionScroll = window.scrollY + vh - eighthSectionPosition;
+		const eighthSectionPersentageOfScroll = persentageOfScroll(
+			eighthSectionScroll,
+			eighthSectionHeight
+		);
+
+		if (
+			0 < eighthSectionPersentageOfScroll &&
+			eighthSectionPersentageOfScroll < 1
+		) {
+			person.style.visibility = "visible";
+			person.style.top = 30 + 30 * eighthSectionPersentageOfScroll + "vh";
+			personStands.style.visibility = "hidden";
+		} else if (eighthSectionPersentageOfScroll >= 1) {
+			person.style.visibility = "hidden";
+		}
+		// ================ вниз на 8
+
+		// ================ рука на 9
+		const nineSectionScroll = window.scrollY + vh - nineSectionPosition;
+		const nineSectionPersentageOfScroll = persentageOfScroll(
+			nineSectionScroll,
+			nineSectionHeight
+		);
+
+		if (
+			0 < nineSectionPersentageOfScroll &&
+			nineSectionPersentageOfScroll < 1
+		) {
+			personStands.style.visibility = "visible";
+			handWithCoin.style.top = 100 - 50 * nineSectionPersentageOfScroll + "vh";
+		} else if (nineSectionPersentageOfScroll >= 1) {
+			handWithCoin.style.top = "100vh";
+			personStands.style.visibility = "hidden";
+		} else if (0 >= nineSectionPersentageOfScroll) {
+			handWithCoin.style.top = "100vh";
+		}
+		// ================ рука на 9
+
+		// ================ рука на 10
+		const tenSectionScroll = window.scrollY + vh - tenSectionPosition;
+		const tenSectionPersentageOfScroll = persentageOfScroll(
+			tenSectionScroll,
+			tenSectionHeight
+		);
+		if (0 < tenSectionPersentageOfScroll && tenSectionPersentageOfScroll < 1) {
+			personStandsWithCoin.style.visibility = "visible";
+			handWithoutCoin.style.top = 50 + 50 * tenSectionPersentageOfScroll + "vh";
+			elevenViewAreaEl.style.visibility = "visible";
+		} else if (tenSectionPersentageOfScroll >= 1) {
+			// personStandsWithCoin.style.visibility = "hidden";
+			handWithoutCoin.style.top = "100vh";
+		} else if (0 >= tenSectionPersentageOfScroll) {
+			personStandsWithCoin.style.visibility = "hidden";
+			elevenViewAreaEl.style.visibility = "hidden";
+			handWithoutCoin.style.top = "100vh";
+		}
+		// ================ рука на 10
+
+		// ================ увеличение обзора на 11
+		const elevenSectionScroll = window.scrollY + vh - elevenSectionPosition;
+		const elevenSectionPersentageOfScroll = persentageOfScroll(
+			elevenSectionScroll,
+			elevenSectionHeight
+		);
+		if (
+			0 < elevenSectionPersentageOfScroll &&
+			elevenSectionPersentageOfScroll < 1
+		) {
+			const size =
+				viewWidth + (window.scrollY + vh - elevenSectionPosition) / 5 + "px";
+			elevenViewAreaEl.style.height = size;
+			elevenViewAreaEl.style.width = size;
+		} else if (elevenSectionPersentageOfScroll >= 1) {
+		} else if (0 >= elevenSectionPersentageOfScroll) {
+			elevenViewAreaEl.style.height = viewWidth;
+			elevenViewAreaEl.style.width = viewWidth;
+		}
+		// ================ увеличение обзора на 11
 	});
+
+	function persentageOfScroll(sectionScroll, sectionHeight) {
+		const persentage = Math.ceil((sectionScroll / sectionHeight) * 1000) / 1000;
+		return persentage > 1 ? 1 : persentage < 0 ? 0 : persentage;
+	}
 });

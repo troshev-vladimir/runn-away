@@ -2,6 +2,13 @@
     position: relative;
     height: 100vh;
     text-align: center;
+    z-index: 101;
+}
+
+.second .container {
+    margin-top: 30vh;
+    top: 30vh;
+    position: sticky;
 }
 
 .second.visible .pc {
@@ -12,7 +19,8 @@
     display: block;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%,0);
+    width: 350px;
 }
 
 .person-with-pc {
@@ -23,15 +31,16 @@
 }
 
 .items {
-    position: sticky;
-    top: 10%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px) {
     .pc {
         width: 150px;
         height: 100px;
-        top: 100px;
     }
 
     .items {

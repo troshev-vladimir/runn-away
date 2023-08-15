@@ -1,12 +1,7 @@
 .nine {
     height: 250vh;
     text-align: center;
-    animation: hand-grab 1s linear both;
-    animation-timeline: view(block);
-    animation-range: contain 0 contain 100;
 }
-
-
 
 .nine .person {
     visibility: hidden;
@@ -17,11 +12,8 @@
     z-index: 100;
 }
 
-
 .nine .hand {
-    visibility: hidden;
     position: fixed;
-    top: inherit;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 1000;

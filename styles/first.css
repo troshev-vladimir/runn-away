@@ -2,17 +2,18 @@
     height: 100vh;
     text-align: center;
     position: relative;
+    
 }
 
 .first .person {
     position: fixed;
-    top: 90vh;
+    top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: preson-slide-out linear both;
+    /* animation: preson-slide-out linear both;
     animation-timeline: view(block);
     animation-range-start: exit-crossing 10;
-    animation-range-end: exit-crossing 0;
+    animation-range-end: exit-crossing 0; */
     z-index: 100;
 }
 
@@ -21,11 +22,12 @@
     top: 200px;
     left: 50%;
     transition: all ease .4s;
+    transform: translateX(-50%);
 
-    animation: slide-out linear both;
+    /* animation: slide-out linear both;
     animation-timeline: view(block);
     animation-range-start: contain 80%;
-    animation-range-end: exit-crossing 0;
+    animation-range-end: exit-crossing 0; */
 }
 
 .title h1 {

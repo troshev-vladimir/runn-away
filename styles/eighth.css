@@ -3,22 +3,21 @@
 }
 
 .eighth {
-    height: 250vh;
+    height: 100vh;
     text-align: center;
     top: 30vh;
-    animation: preson-slide-in 1s linear both;
+    
+    /* animation: preson-slide-in 1s linear both;
     animation-timeline: view(block);
-    animation-range: contain 0 contain 100;
+    animation-range: contain 0 contain 100; */
 
 }
 
-.eighth .person {
+/* .eighth .person {
     visibility: hidden;
     position: fixed;
     left: 50%;
     transform: translate(-50%, -50%);
     top: inherit;
     z-index: 100;
-}
-
-
+} */
