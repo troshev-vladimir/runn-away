@@ -108,72 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		rootMargin: "-100px 0px -450px 0px",
 	});
 
-	const rootMargin = "0px 0px 0px 0px";
-
-	// const observerLast1 = new IntersectionObserver(
-	// 	(entry, observer) => {
-	// 		if (entry[0].isIntersecting) {
-	// 			hideAll();
-	// 			eighthSection.classList.add("visible");
-	// 			console.log("eighthSection");
-	// 		}
-	// 	},
-	// 	{
-	// 		root: null,
-	// 		threshold: 0,
-	// 		rootMargin,
-	// 	}
-	// );
-	// observerLast1.observe(eighthSection);
-
-	// const observerLast2 = new IntersectionObserver(
-	// 	(entry, observer) => {
-	// 		if (entry[0].isIntersecting) {
-	// 			hideAll();
-	// 			nineSection.classList.add("visible");
-	// 			console.log("nineSection");
-	// 		}
-	// 	},
-	// 	{
-	// 		root: null,
-	// 		threshold: 0,
-	// 		rootMargin,
-	// 	}
-	// );
-	// observerLast2.observe(nineSection);
-
-	// const observerLast3 = new IntersectionObserver(
-	// 	(entry, observer) => {
-	// 		if (entry[0].isIntersecting) {
-	// 			hideAll();
-	// 			tenSection.classList.add("visible");
-	// 			console.log("tenSection");
-	// 		}
-	// 	},
-	// 	{
-	// 		root: null,
-	// 		threshold: 0,
-	// 		rootMargin,
-	// 	}
-	// );
-	// observerLast3.observe(tenSection);
-
-	// const observerLast4 = new IntersectionObserver(
-	// 	(entry, observer) => {
-	// 		if (entry[0].isIntersecting) {
-	// 			hideAll();
-	// 			elevenSection.classList.add("visible");
-	// 			console.log("elevenSection");
-	// 		}
-	// 	},
-	// 	{
-	// 		root: null,
-	// 		threshold: 0,
-	// 		rootMargin,
-	// 	}
-	// );
-	// observerLast4.observe(elevenSection);
-
 	const buttonLink = document.querySelector("#button-link");
 	const vk = document.querySelector("#vk");
 	const telegram = document.querySelector("#telegram ");
@@ -306,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			nineSectionPersentageOfScroll < 1
 		) {
 			personStands.style.visibility = "visible";
-			handWithCoin.style.top = 100 - 50 * nineSectionPersentageOfScroll + "vh";
+			handWithCoin.style.top = 100 - 65 * nineSectionPersentageOfScroll + "vh";
 		} else if (nineSectionPersentageOfScroll >= 1) {
 			handWithCoin.style.top = "100vh";
 			personStands.style.visibility = "hidden";
@@ -323,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		);
 		if (0 < tenSectionPersentageOfScroll && tenSectionPersentageOfScroll < 1) {
 			personStandsWithCoin.style.visibility = "visible";
-			handWithoutCoin.style.top = 50 + 50 * tenSectionPersentageOfScroll + "vh";
+			handWithoutCoin.style.top = 35 + 65 * tenSectionPersentageOfScroll + "vh";
 			elevenViewAreaEl.style.visibility = "visible";
 		} else if (tenSectionPersentageOfScroll >= 1) {
 			// personStandsWithCoin.style.visibility = "hidden";
