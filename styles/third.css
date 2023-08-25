@@ -72,14 +72,14 @@
 
     .chip {
         position: absolute;
-        top: 0px;
+        top: 170px;
         right: 0%;
         z-index: 10;
     }
     
     .usbs {
         position: absolute;
-        top: 300px;
+        top: 450px;
         z-index: 10;
         left: 0%;
     }

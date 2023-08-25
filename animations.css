@@ -133,12 +133,6 @@
     animation-range: exit 100;
 }
 
-@media screen and (max-width: 600px) {
-    .show-from-top {
-        display: none;
-    }
-}
-
 @keyframes show-from-top {
     from {
         transform: translateY(-100%);

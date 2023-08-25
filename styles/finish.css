@@ -15,13 +15,18 @@
 }
 
 @media screen and (max-width: 600px) {
+
+    .finish {
+        background-color: #fff;
+    }
+
     .finish > svg:not(.mobile) {
         display: none;
     }
 
     .finish > svg.mobile {
         display: block;
-        bottom: 0;
+        top: 0;
         position: absolute;
     }
 }

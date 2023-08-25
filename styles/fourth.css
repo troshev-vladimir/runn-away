@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-.forth .show-from-top {
+.forth .photo-from-top {
     position: absolute;
     top: 0;
     right: 350px;
@@ -33,6 +33,10 @@
 
 @media screen and (max-width: 600px) {
 
+    .forth {
+        height: 1200px;
+    }
+
     .forth .text1, .forth .text2, .forth .text3 {
         width: 80vw;
     }
@@ -40,12 +44,12 @@
     .forth .text1 {
         position: absolute;
         right: 0;
-        top: 300px;
+        top: 100px;
     }
     
     .forth .text2 {
         position: absolute;
-        top: 600px;
+        top: 400px;
         width: 100vw;
     }
     
@@ -53,7 +57,12 @@
         position: absolute;
         right: 0;
         width: 100vw;
-        top: 900px;
+        top: 800px;
+    }
+
+    .forth .photo-from-top {
+        right: 0;
+        width: 50vw;
     }
     
 }

@@ -27,13 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	const elevenSection = document.querySelector(".eleven");
 
 	const pc = document.querySelector(".pc");
+	const photoTop = document.querySelector(".photo-from-top");
+	const vacancy = document.querySelector(".vacancy");
+	const parachute = document.querySelector(".parachute");
 	const handWithCoin = nineSection.querySelector(".hand");
 	const handWithoutCoin = tenSection.querySelector(".hand");
 	const personStands = nineSection.querySelector(".person");
 	const personStandsWithCoin = tenSection.querySelector(".person");
 
 	// const eightPerson = eighthSection.querySelector(".person");
-
 	function hideAll() {
 		person.classList.add("hidden");
 		personWithPc.classList.add("hidden");
@@ -126,6 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const firstSectionPosition = firstSection.offsetTop;
 	const secondSectionPosition = secondSection.offsetTop;
 	const thirdSectionPosition = thirdSection.offsetTop;
+	const forthSectionPosition = forthSection.offsetTop;
+	const fifthSectionPosition = fifthSection.offsetTop;
 	const eighthSectionPosition = eighthSection.offsetTop;
 	const nineSectionPosition = nineSection.offsetTop;
 	const tenSectionPosition = tenSection.offsetTop;
@@ -133,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const firstSectionHeight = firstSection.getBoundingClientRect().height;
 	const secondSectionHeight = secondSection.getBoundingClientRect().height;
 	const thirdSectionHeight = thirdSection.getBoundingClientRect().height;
+	const forthSectionHeight = forthSection.getBoundingClientRect().height;
+	const fifthSectionHeight = fifthSection.getBoundingClientRect().height;
 	const eighthSectionHeight = eighthSection.getBoundingClientRect().height;
 	const nineSectionHeight = nineSection.getBoundingClientRect().height;
 	const tenSectionHeight = tenSection.getBoundingClientRect().height;
@@ -179,14 +185,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			0 < secondSectionPersentageOfScroll &&
 			secondSectionPersentageOfScroll < 1
 		) {
+			vacancy.classList.add("visible");
+			vacancy.style.transform = `translate(${
+				secondSectionPersentageOfScroll * 100 - 70
+			}%)`;
+
 			personWithPc.classList.remove("hidden");
 			person.classList.add("hidden");
 			pc.classList.add("hidden");
 		} else if (0 >= secondSectionPersentageOfScroll) {
+			vacancy.classList.remove("visible");
 			personWithPc.classList.add("hidden");
 			person.classList.remove("hidden");
 			pc.classList.remove("hidden");
 		} else if (1 < secondSectionPersentageOfScroll) {
+			vacancy.classList.remove("visible");
 			personWithPc.classList.add("hidden");
 			person.classList.remove("hidden");
 			pc.classList.remove("hidden");
@@ -208,6 +221,36 @@ document.addEventListener("DOMContentLoaded", () => {
 			pc.classList.remove("hidden");
 		}
 		// ================ из-за компа
+
+		// ================ фото на 4
+		const forthSectionScroll = window.scrollY + vh - forthSectionPosition;
+		const forthSectionPersentageOfScroll = persentageOfScroll(
+			forthSectionScroll,
+			forthSectionHeight
+		);
+
+		if (
+			0 < forthSectionPersentageOfScroll &&
+			forthSectionPersentageOfScroll < 1
+		) {
+			photoTop.style.top = 30 - 100 * forthSectionPersentageOfScroll + "vh";
+		}
+		// ================ пашашют на 4
+
+		// ================ пашашют на 5
+		const fifthSectionScroll = window.scrollY + vh - fifthSectionPosition;
+		const fifthSectionPersentageOfScroll = persentageOfScroll(
+			fifthSectionScroll,
+			fifthSectionHeight
+		);
+
+		if (
+			0 < fifthSectionPersentageOfScroll &&
+			fifthSectionPersentageOfScroll < 1
+		) {
+			parachute.style.top = 80 * fifthSectionPersentageOfScroll + "vh";
+		}
+		// ================ пашашют на 5
 
 		// ================ вниз на 8
 		const eighthSectionScroll = window.scrollY + vh - eighthSectionPosition;

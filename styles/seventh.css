@@ -36,7 +36,7 @@
 @media screen and (max-width: 600px) {
 
     .seventh {
-        height: 1800px;
+        height: 1500px;
     }
 
     .seventh .text1, .seventh .text2, .seventh .text3 {
@@ -46,7 +46,7 @@
     .seventh .text1 {
         position: absolute;
         left: -5%;
-        top: 0px;
+        top: 60px;
         width: 100vw;
     }
 
@@ -64,7 +64,7 @@
 
     .seventh .decor-2 {
         left: 0;
-        top: 1200px;
+        top: 900px;
         width: 50vw;
     }
     
@@ -72,7 +72,7 @@
         position: absolute;
         right: 20px;
         left: initial;
-        top: 1600px;
+        top: 1350px;
     }
 
     
