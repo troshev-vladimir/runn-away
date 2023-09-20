@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const step1 = person.querySelector(".person-step1");
 		const step2 = person.querySelector(".person-step2");
 
-		if (window.scrollY % 2) {
+		if (window.scrollY % 20) {
 			step1.classList.add("hidden");
 			step2.classList.remove("hidden");
 		} else {
@@ -198,11 +198,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			personWithPc.classList.add("hidden");
 			person.classList.remove("hidden");
 			pc.classList.remove("hidden");
-		} else if (1 < secondSectionPersentageOfScroll) {
+		} else if (1 <= secondSectionPersentageOfScroll) {
 			vacancy.classList.remove("visible");
 			personWithPc.classList.add("hidden");
-			person.classList.remove("hidden");
-			pc.classList.remove("hidden");
+			pc.classList.add("hidden");
 		}
 		// ================ за комп
 
@@ -273,10 +272,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// ================ рука на 9
 		const nineSectionScroll = window.scrollY + vh - nineSectionPosition;
+		console.log(nineSectionScroll);
 		const nineSectionPersentageOfScroll = persentageOfScroll(
 			nineSectionScroll,
 			nineSectionHeight
 		);
+		console.log(nineSectionPersentageOfScroll);
 
 		if (
 			0 < nineSectionPersentageOfScroll &&

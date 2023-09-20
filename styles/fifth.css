@@ -1,6 +1,7 @@
 .fifth {
     position: relative;
     height: 2200px;
+    background-color: #303030;
 }
 
 .parachute {
@@ -36,7 +37,7 @@
 .fifth .text1 {
     position: absolute;
     right: 0;
-    z-index: 100;
+    z-index: 2;
     top: 400px;
 }
 
@@ -51,6 +52,7 @@
     position: absolute;
     top: 1550px;
     left: 0;
+    z-index: 2;
 }
 
 @media screen and (max-width: 600px) {

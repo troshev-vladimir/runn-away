@@ -23,7 +23,8 @@
     left: 50%;
     transition: all ease .4s;
     transform: translateX(-50%);
-
+    max-width: 1500px;
+    width: 100%;
     /* animation: slide-out linear both;
     animation-timeline: view(block);
     animation-range-start: contain 80%;
@@ -32,16 +33,18 @@
 
 .title h1 {
     font-family: Zing;
-    font-size: 50px;
+    font-size: 200px;
     font-style: normal;
     font-weight: 100;
     color: #F1F1F1;
+    margin: 0;
 }
 
 .title h2 {
     color: #F1F1F1;
     padding: 0 20px;
     margin-bottom: 60px;
+    font-size: 38px;
 }
 
 @media screen and (max-width: 600px) {
@@ -49,6 +52,14 @@
       width: 100%;
       font-size: 14px;
       font-weight: 700;
+    }
+
+    .title h1 {
+      font-size: 50px;
+    }
+
+    .title h2 {
+      font-size: 20px;
     }
   
     .logo {

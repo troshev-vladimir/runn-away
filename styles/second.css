@@ -1,6 +1,6 @@
 .second {
     position: relative;
-    height: 100vh;
+    height: 110vh;
     text-align: center;
     z-index: 101;
 }
@@ -38,16 +38,19 @@
 }
 
 .vacancy {
+    display: none;
     top: -100px;
     white-space: nowrap;
     z-index: 10;
-    visibility: hidden;
     color: #fff;
     text-transform: uppercase;
+    font-family: Zing;
+    font-size: 50px;
+    font-weight: 100;
 }
 
 .vacancy.visible {
-    visibility: visible;
+    display: block;
 }
 
 @media screen and (max-width: 600px) {
@@ -58,5 +61,9 @@
 
     .items {
         width: 100vw;
+    }
+
+    .vacancy {
+        font-size: 18px;
     }
 }
