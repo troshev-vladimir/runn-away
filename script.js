@@ -349,4 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )
       .focus();
   });
+  window.onload = function () {
+    document.getElementById("hideAll").style.display = "none";
+  };
 });
