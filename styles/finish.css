@@ -17,7 +17,7 @@
 @media screen and (max-width: 600px) {
 
     .finish {
-        background-color: #fff;
+        background-color: #F1F2F2;
     }
 
     .finish > svg:not(.mobile) {
